@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tyan Jennie</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Tyan Jennie">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+
+        
+
+
+        <body>
+            <div class="movingText" style="padding-top: 10px;">
+                <div class="moving-text" id="move_text" >TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE TYAN JENNIE</div>
+            </div>
+            <div class="wrapper">
+        
+                <div class="header">
+
+                    <h1 id="colorText">JENNIE TYAN</h1>
+
+                </div>
+        
+                <div class="nav">
+                        <ol>
+                            <li><a href="index.html">HOME</a></li>
+                            
+                        </ol>   
+                        
+                </div>
+
+
+                <div class="main">
+
+                        <section class="header-grid">
+
+                            <label for="nameInput" style="font-family: Handjet; font-size: 20px ;"> Enter your name:</label>
+                            <input type="text" id="nameInput" placeholder="Your name"> 
+                            <button onclick="greet()" style="margin-bottom: 30px;">Greet</button>
+
+                            <p id="greetingMessage" style="font-family: Handjet; font-size: 40px ;"></p>
+                            <div class="header-text">
+
+                                <hr>
+
+                                <h1>Who am i?</h1>
+                                <button onclick="showText()">Learn More</button>
+                                <p id="text">Hi! My name is Jennie, and I am a student at Humber College in the Multimedia Design and Development program. Here, you can view my portfolio, which consists of my digital art, 3D models, and some experimental pieces I’ve created over time. If, while browsing, you become interested in commissioning your own personalized art piece from me, you can also find all my contact information.</p>
+                            </div>
+                            <img src="img/star.jpg" class="img1" id="image">
+                        </section>
+        
+                        <hr>
+        
+                        <section class="Relative">
+                            <h1>My Art</h1>
+                            <img src="img/333.gif" class="img111">
+                            <img src="img/222.jpg" class="img8" height="800" width="600">
+                        </section>
+
+                        <section class="Relative">
+                            <img src="img/666.png" class="img11" height="800" width="600">
+                            <img src="img/555.jpg" class="img8" height="1000" width="600">
+                        </section>
+    
+                      </main>
+                </div>
+                </div>
+        
+        
+        <footer>
+
+            <div class="container">
+                <h2>Comission me!</h2>
+                <form action="action_page.php">
+
+                  <label for="fname">Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+                  <label for="lname">Email</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Your email.."><br>
+
+                  <label for="order">Comission</label>
+                  <select id="order" name="order">
+                    <option value="3d">Low poly 3D model</option>
+                    <option value="2d">2D art</option>
+                    <option value="animation">Animation</option>
+                  </select><br>
+
+
+                    <label for="details">Details</label><br>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px; "></textarea>
+
+                  <br>
+                  <input type="submit" value="Submit">
+
+                </form>
+              </div>
+
+            <div class="footer">
+            <div class="row">
+                
+                <p>
+                    <a href="https://www.instagram.com/1ich3/profilecard/?igsh=MXR2NXRoeTZzc3I3ZA==">
+                    <img src="img/insta.png" alt="insta" width="40" height="40" >
+                    </a>
+                </p>
+            
+                <p>
+                    <a href="https://www.tiktok.com/@shrimpification?_t=8raQLm4SlzL&_r=1">
+                    <img src="img/tt.webp" alt="tiktok" width="40" height="37">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://youtube.com/@shrimpificat1on?si=2sHa4MKahCS8cd6t">
+                    <img src="img/yt.png" alt="youtube" width="40" height="40">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://x.com/twittercanada?s=21">
+                    <img src="img/X.png" alt="twitter" width="35" height="35">
+                    </a>
+                </p>
+            </div>
+            
+            <div class="row">
+            <ul>
+            <li><a href="#">Contact me</a></li>
+            </ul>
+            </div>
+            
+            </div>
+            </footer>
+
+        <script>
+            function showAlert() {
+                alert ("Hello!");
+            }
+            showAlert();
+            function showText() {
+                 var text = document.getElementById("text");
+                if (text.style.display === "none") {
+                    text.style.display = "block";
+                } else {
+                    text.style.display = "none";
+                }
+            }
+
+
+            const pic = document.getElementById("image");
+
+            pic.addEventListener("mouseover", function() {
+                pic.src = "img/heart.png";
+            });
+
+            pic.addEventListener("mouseout", function() {
+                pic.src = "img/star.jpg"; 
+            });
+
+            function greet() {
+                const name = document.getElementById("nameInput").value; 
+                const greeting = `Greetings, ${name}!`; 
+                document.getElementById("greetingMessage").textContent = greeting; 
+            }
+
+
+
+            const text = document.getElementById('move_text');
+            let position = 0; 
+            const screenWidth = window.innerWidth; 
+            const textWidth = text.offsetWidth; 
+
+            function move() {
+            if (position > screenWidth) {
+                position = -textWidth; 
+            }
+            position += 2; 
+            text.style.left = position + 'px'; 
+            requestAnimationFrame(move);
+            }
+
+            move();
+
+
+
+            const textElement = document.getElementById('colorText');
+
+            let isBlue = true;
+
+            function changeColor() {
+                if (isBlue) {
+                    textElement.style.color = 'black'; 
+                } else {
+                    textElement.style.color = '#1238FF'; 
+                }
+                isBlue = !isBlue;
+            }
+
+            setInterval(changeColor, 30000);
+
+            changeColor();
+        </script>
+    
+            </head>
+        </body>
+
+        </html>
+     
